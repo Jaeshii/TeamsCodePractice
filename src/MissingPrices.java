@@ -9,22 +9,17 @@ public class MissingPrices {
 
         for (int i = 0; i < N; i++) {
             double X = 0;
-            for (int j = 0; j < 3; j++) {
-                String base = in.next();
-                String tax = in.next();
-                String result = in.next();
-                if (base.equals("X")) {
-                    X = Double.parseDouble(result) * (100 / (100 + Double.parseDouble(tax)));
-                    break;
-                }
-                else if (tax.equals("X")) {
-                    X = (100 * Double.parseDouble(result)) / Double.parseDouble(base) - 100;
-                    break;
-                }
-                else {
-                    X = (100 + Double.parseDouble(tax)) / 100 * Double.parseDouble(base);
-                    break;
-                }
+            String base = in.next();
+            String tax = in.next();
+            String result = in.next();
+            if (base.equals("X")) {
+                X = Double.parseDouble(result) * (100 / (100 + Double.parseDouble(tax)));
+            }
+            else if (tax.equals("X")) {
+                X = (100 * Double.parseDouble(result)) / Double.parseDouble(base) - 100;
+            }
+            else {
+                X = (100 + Double.parseDouble(tax)) / 100 * Double.parseDouble(base);
             }
             System.out.printf("%5.2f%n", X);
         }
