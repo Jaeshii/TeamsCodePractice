@@ -29,4 +29,8 @@ public class Itoa {
             System.out.println(convertedNum);
         }
     }
+    // alternative solution
+    public static String convertFromBaseToBase(String str, int fromBase, int toBase) {
+        return Integer.toString(Integer.parseInt(str, fromBase), toBase);
+    }
 }
